@@ -19,7 +19,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 const api = await getChatGPTAPI();
-const allowedOrigins = [process.env.site];
+const allowedOrigins = ['https://audio.yongmai.xyz'];
 
 app.use(
   cors({
