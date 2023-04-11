@@ -19,8 +19,19 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 const api = await getChatGPTAPI();
+const allowedOrigins = [process.env.site];
 
-app.use(cors());
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  })
+);
 app.use(express.json());
 app.use(errorHandler);
 
