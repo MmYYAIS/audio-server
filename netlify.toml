@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build" # You should have a build script in your package.json to generate the production build
+  functions = "functions" # Optional: If you're using Netlify Functions, specify the folder here
+  publish = "dist" # Specify the folder where your built app is located, e.g., "public", "dist", or "build"
+
+[[redirects]]
+  from = "/*"
+  to = "/src/index.ts" # Make sure your compiled JavaScript file is in the publish folder
+  status = 200
+  force = true
