@@ -3,5 +3,5 @@ services:
     name: chatgpt-server
     env: node
     buildCommand: "npm ci && npx tsc"
-    startCommand: "npm start"
+    startCommand: "npm run start"
     healthCheckPath: /health
