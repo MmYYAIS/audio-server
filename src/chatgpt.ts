@@ -1,4 +1,12 @@
 import { ChatGPTAPI } from 'chatgpt';
+import fetch from 'node-fetch';
+
+if (!globalThis.fetch) {
+  globalThis.fetch = fetch;
+}
+
+// Your application code that initializes ChatGPTAPI
+
 
 export { ChatGPTAPI };
 
