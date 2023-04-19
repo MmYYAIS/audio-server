@@ -3,6 +3,11 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { errorHandler } from './middlewares.js';
 import { getChatGPTAPI } from './chatgpt.js';
+import fetch from 'node-fetch';
+
+if (!globalThis.fetch) {
+  globalThis.fetch = fetch;
+}
 
 
 interface CreateChatGPTMessageRequestBody {
