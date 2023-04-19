@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: chatgpt-server
+    env: node
+    buildCommand: "npm ci && npm run build"
+    startCommand: "npm start"
+    healthCheckPath: /health
